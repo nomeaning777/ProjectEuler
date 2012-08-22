@@ -1,0 +1,19 @@
+<?php
+	$res=array();
+	define("N",1000000);
+	for($i=0;$i<=N;$i++){
+		$res[$i]=$i;
+	}
+	for($i=2;$i<=N;$i++){
+		if($res[$i]==$i){
+			for($j=$i;$j<=N;$j+=$i){
+				$res[$j]=$res[$j]/$i*($i-1);
+			}
+		}
+	}
+	$ans=0;
+	for($i=2;$i<=N;$i++){
+		$ans+=$res[$i];
+	}
+	echo $ans;
+?>

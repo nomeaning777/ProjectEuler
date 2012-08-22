@@ -1,0 +1,10 @@
+(let ((answer 1))
+  (dotimes (a 90)
+	(dotimes (b 90)
+	  (let ((x (+ a 10)) (y (+ b 10))) 
+		(if (and (< x y) (not (= (mod x 10) 0)) (not (= (mod y 10) 0)))
+			(if (or (and (= (truncate y 10) (mod x 10)) (= (/ x y) (/ (truncate x 10) (mod y 10))))
+					(and (= (truncate x 10) (mod y 10)) (= (/ x y) (/ (mod x 10) (truncate y 10)))))
+				(setq answer (* answer (/ x y))))))))
+  (print (denominator answer)))
+; => 100

@@ -1,0 +1,8 @@
+(setq input (sort (split-string (read-string "") ",") #'string-lessp)
+      answer 0 cnt 0)
+(dolist (x input)
+  (setq cnt (+ cnt 1) i 1)
+  (do ((i 1 (1+ i))) ((= i (- (length x) 1)) answer)
+    (setq answer (+ answer (* cnt (- (char-code (elt x i)) 64))))
+    ))
+(print answer)

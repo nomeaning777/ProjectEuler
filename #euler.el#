@@ -1,0 +1,12 @@
+(progn (setq input (read-string ""))
+       (setq input (split-string input ","))
+       (setq input (sort input #'string-lessp))
+       (setq answer 0 cnt 1)
+       (dolist (x input)
+	 (dolist (y x)
+	    (print y)) 
+	 (setq cnt (+ cnt 1)))
+       (print answer)
+)x
+(char-code ?a)
+
